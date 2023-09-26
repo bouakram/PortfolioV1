@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
+
+.navbar{
+    // z-index: 1;
+    // position: fixed;
+    // top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+
+    .logo{
+        font-family: 'Skranji', cursive;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        width: 190px;
+        transition: all 1s ease-in-out;
+        cursor: pointer;
+        &:hover{
+            .nickname{
+                opacity: 0;
+            }
+            .name{
+                opacity: 1;
+            }
+        }
+        
+        .nickname{
+            transition: all .3s ease-in-out;
+            transition-delay: .2s;
+            position: absolute;
+            opacity: 1;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .name{
+            transition: all .3s ease-in-out;
+            transition-delay: .2s;
+            position: absolute;
+            opacity: 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    }
+
+    .navigation{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        ul{
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            
+            li{
+                transition: all .3s ease-in-out;
+                cursor: pointer;
+                &:hover{
+                    color: gray;
+                }
+            }
+        }
+    }
+
+    .hamburgerContainerMenu{
+        position: fixed;
+        z-index: 2;
+        right: 0;
+        margin: 20px;
+        width: 80px;
+        height: 80px;
+        background-color: black;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transform: scale(0);
+        
+        .burger{
+            width: 100%;
+            &::after, &::before {
+                content: '';
+                display: block;
+                width: 40%;
+                background-color: white;
+                height: 1px;
+                margin: auto;
+                position: relative;
+                transition: all .3s ease-in-out;
+            }
+
+            &::after{
+                top: -5px
+            }
+            &::before{
+                top: 5px
+            }
+        }
+        .burgerActive{
+            &::after{
+                top: -1px;
+                transform: rotate(-44deg)
+            }
+            &::before{
+                top: 1px;
+                transform: rotate(44deg)
+            }
+        }
+    }
+}
