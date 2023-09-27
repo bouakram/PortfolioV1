@@ -2,24 +2,25 @@ import React from 'react'
 import styles from './nav.module.scss'
 import { motion } from 'framer-motion'
 import { menuslide, slide } from './animate'
+import Magnatic from '../magnatic/Magnatic'
 
-function Nav() {
+function Nav({isActive, setIsActive}) {
     const navItems = [
         {
             title: 'Home',
-            href: '/'
+            href: '#home'
         },
         {
             title: 'About',
-            href: '/about'
+            href: '#about'
         },
         {
             title: 'Work',
-            href: '/work'
+            href: '#work'
         },
         {
             title: 'Contact',
-            href: '/contact'
+            href: '#contact'
         }
     ]
   return (
@@ -37,15 +38,19 @@ function Nav() {
                     {
                         navItems.map((items, index)=>{
                             return (
-                                <motion.p 
-                                custom={index}
-                                variants={slide} 
-                                animate='enter' 
-                                exite='exit' 
-                                initial='initial' 
-                                key={index}>
-                                    {items.title}
-                                </motion.p>
+                                <Magnatic>
+                                    <motion.a
+                                    onClick={()=>setIsActive(!isActive)}
+                                    href={items.href}
+                                    custom={index}
+                                    variants={slide} 
+                                    animate='enter' 
+                                    exite='exit' 
+                                    initial='initial' 
+                                    key={index}>
+                                        {items.title}
+                                    </motion.a>
+                                </Magnatic>
                                 )
                         })
                     }

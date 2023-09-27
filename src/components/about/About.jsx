@@ -9,7 +9,7 @@ function About() {
     const container = useRef(null)
     const isInView = useInView(container)
   return (
-    <div ref={container} className={styles.about}>
+    <div id='about' ref={container} className={styles.about}>
         <div className={styles.body}>
             <p>
                 {

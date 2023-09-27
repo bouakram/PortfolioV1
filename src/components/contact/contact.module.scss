@@ -1,0 +1,92 @@
+.contact{
+    margin: 4rem 4rem 0 4rem;
+    // height: 80vh;
+    overflow: hidden;
+
+    .title{
+        font-size: 4rem;
+        font-weight: 300;
+        margin-bottom: 4rem;
+    }
+
+    .contactcontainer{
+        position: relative;
+        &::after{
+            content: '';
+            top: 50%;
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 0.5px;
+            background-color: #040D12;
+        }
+
+        .contactbutton{
+            position: absolute;
+            top: -50px;
+            z-index: 1;
+            right: 10%;
+            background-color: #040D12;
+            border: solid 1px white;
+            color: white;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+
+    .contactinfo{
+        margin-top: 10rem;
+        overflow: hidden;
+        display: flex;
+        gap: 3rem;
+        @media only screen and (max-width: 500px) {
+            flex-direction: column;
+        }
+        p{
+            border: solid #040D12 1px;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            width: 30%;
+            text-align: center;
+            transition: all .3s ease-in-out;
+            @media only screen and (max-width: 500px) {
+                width: 100%;
+            }
+
+            &:hover{
+                background-color: #040D12;
+                color: white;
+            }
+        }
+    }
+
+    .footer{
+        margin-top: 4rem;
+        padding: 2rem 0;
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+        .copy{
+            display: flex;
+            align-items: center;
+        }
+        .social{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            
+            a{
+                text-decoration: none;
+                color: black;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

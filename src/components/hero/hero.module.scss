@@ -15,10 +15,17 @@
         font-weight: 400;
         position: relative;
         overflow: hidden;
+        @media only screen and (max-width: 500px) {
+            font-size: 3rem;
+        }
+        
     }
     .nickname{
         font-size: 4rem;
         position: relative;
         overflow: hidden;
+        @media only screen and (max-width: 500px) {
+            font-size: 2.5rem;
+        }
     }
 }

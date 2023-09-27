@@ -7,7 +7,7 @@ function Hero() {
     const container = useRef(null)
     const isInView = useInView(container)
   return (
-    <div ref={container} className={styles.hero}>
+    <div id='home' ref={container} className={styles.hero}>
         <motion.div 
         className={styles.name}
         variants={slidUpName}

@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useRef } from 'react'
 import styles from './navbar.module.scss'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Magnatic from '../magnatic/Magnatic'
 
 function Navbar({isActive, setIsActive}) {
     const burger = useRef(null)
@@ -14,7 +15,10 @@ function Navbar({isActive, setIsActive}) {
                 start: 0,
                 end: window.innerHeight,
                 onLeave: ()=>{gsap.to(burger.current, {scale: 1, duration: 0.25, ease: 'power1.out'})},
-                onEnterBack: ()=>{gsap.to(burger.current, {scale: 0, duration: 0.25, ease: 'power1.out'})}
+                onEnterBack: ()=>{
+                    setIsActive(false)
+                    gsap.to(burger.current, {scale: 0, duration: 0.25, ease: 'power1.out'})
+                }
             }
         })
     },[])
@@ -26,15 +30,51 @@ function Navbar({isActive, setIsActive}) {
         </div>
         <div className={styles.navigation}>
             <ul>
-                <li >Home</li>
-                <li>About</li>
-                <li>Work</li>
-                <li>Contact</li>
+                <li>
+                    <a href='#home'>
+                    <Magnatic>
+                        <p>
+                            Home
+                        </p>
+                    </Magnatic>
+                    </a>
+                </li>
+                <li>
+                    <a href='#about'>
+                        <Magnatic>
+                            <p>
+                                About
+                            </p>
+                        </Magnatic>
+                    </a>
+                </li>
+                <li>
+                    <a href='#work'>
+                        <Magnatic>
+                            <p>
+                                Work
+                            </p>
+                        </Magnatic>
+                    </a>
+                </li>
+                <li>
+                    <a href='#contact'>
+                        <Magnatic>
+                            <p>
+                                Contact
+                            </p>
+                        </Magnatic>
+                    </a>
+                </li>
             </ul>
         </div>
-        <div ref={burger} onClick={()=>setIsActive(!isActive)} className={styles.hamburgerContainerMenu}>
-            <div className={`${styles.burger} ${isActive ? styles.burgerActive : ''}`}></div>
-        </div>
+            <div ref={burger} className={styles.hamburgerContainerMenu}>
+            <Magnatic>
+                <div  onClick={()=>setIsActive(!isActive)} className={styles.button}>
+                    <div className={`${styles.burger} ${isActive ? styles.burgerActive : ''}`}></div>
+                </div>
+            </Magnatic>
+            </div>
     </div>
     )
 }
