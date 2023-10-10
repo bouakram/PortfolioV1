@@ -26,7 +26,7 @@ function Contact() {
         </div>
 
         <motion.div style={{x: x1}} className={styles.contactinfo}>
-                <p>spanboughazi.akram.97@gmail.com</p>
+                <p>boughazi.akram.97@gmail.com</p>
                 <p>+213676178342</p>
         </motion.div>
 
